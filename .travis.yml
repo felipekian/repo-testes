@@ -3,13 +3,13 @@ matrix:
         - language: python
           python:
             - "3.6"
-        - install:
+          install:
             - make install
-        - script:
+          script:
             - make pytest
 
         - language: c
-        - compiler:
+          compiler:
             - gcc
-        - script:
+          script:
             - make c_test
