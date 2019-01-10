@@ -4,12 +4,19 @@ matrix:
           python:
             - "3.6"
           install:
-            - make install
+            - make install_python
           script:
-            - make pytest
+            - make build_python
 
         - language: c
           compiler:
             - gcc
           script:
-            - make c_test
+            - make build_c
+
+       -  language: java
+          jdk:
+            - oraclejdk8
+          install: true
+          script:
+            - make build_java
