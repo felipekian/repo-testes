@@ -1,8 +1,15 @@
-language: python
-python:
-  - "3.6"
-install:
-  - make install
-# command to run tests
-script:
-  - make pytest
+matrix:
+    include:
+        - language: python
+          python:
+            - "3.6"
+        - install:
+            - make install
+        - script:
+            - make pytest
+
+        - language: c
+        - compiler:
+            - gcc
+        - script:
+            - make c_test
